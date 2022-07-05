@@ -1,29 +1,27 @@
 #include <stdio.h>
 
 /**
- * main - natural numbers multiples of 3 or 5 to 1024
+ * main - print fibonacci
  *
  * Return: always 0
  */
-
 int main(void)
 {
-	int s, t, f, tm, fm;
+	long int a, b, c, d;
 
-	s = 0;
-	for (t = 0; t <= (1024 / 3); t++)
+	a = 1;
+	b = 2;
+	c = 3;
+
+	printf("%ld, ", a);
+	printf("%ld, ", b);
+	for (d = 3; d < 50; d++)
 	{
-		tm = 3 * t;
-		s = s + tm;
+		printf("%ld, ", c);
+		a = b;
+		b = c;
+		c = a + b;
 	}
-	for (f = 0; f <= (1024 / 5); f++)
-	{
-		if (!(f % 3 == 0))
-		{
-			fm = 5 * f;
-			s = s + fm;
-		}
-	}
-	printf("%i\n", s);
+	printf("%ld\n", c);
 	return (0);
 }
