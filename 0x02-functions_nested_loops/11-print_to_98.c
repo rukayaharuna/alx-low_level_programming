@@ -1,14 +1,22 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * add - adds two integers
- * @a: first integer
- * @b: second integer
+ * print_to_98 - prints from any integer to 98
+ * @n: integer input
  *
- * Return: addition of a and b
+ * Return: void
  */
 
-int add(int a, int b)
+void print_to_98(int n)
 {
-	return (a + b);
+	while (n != 98)
+	{
+		printf("%i, ", n);
+		if (n > 98)
+			n--;
+		else
+			n++;
+	}
+	printf("98\n");
 }
