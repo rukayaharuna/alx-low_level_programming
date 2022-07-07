@@ -1,23 +1,22 @@
 #include "main.h"
 
 /**
- * print_diagonal - checks for digit
- * @n: number of \\ to be printed
+ * print_square - check for a digit
+ * @n : number of _ to be printed
  * Return: void
  */
-void print_diagonal(int n)
+void print_square(int n)
 {
 	int i = 0, ii;
 
 	while (i < n && n > 0)
 	{
 		ii = 0;
-		while (ii < i)
+		while (ii < n)
 		{
-			_putchar(' ');
+			_putchar('#');
 			ii++;
 		}
-		_putchar('\\');
 		_putchar('\n');
 		i++;
 	}
