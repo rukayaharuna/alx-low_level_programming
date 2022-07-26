@@ -2,39 +2,29 @@
 #include <stdlib.h>
 
 /**
- * argstostr - concatenates all the arguments of your program.
- * @ac: number of arguments
- * @av: double pointer to arguments
+ * _strdup - copy a string to a newly allocated space in memory
+ * @str: string to copy
  *
- * Return:pointer to new string, or NULL if error
+ * Return: pointer to duplicated string or NULL if error
  */
-char *argstostr(int ac, char **av)
+char *_strdup(char *str)
 {
-	int i, j, k = 0, n = 0;
+	unsigned int i, j;
 	char *s;
 
-	if (ac <= 0 || av == NULL)
+	if (str == NULL)
 		return (NULL);
-	for (i = 0; i < ac; i++)
-	{
-		for (j = 0; av[i][j]; j++)
-			n++;
-		n++;
-	}
-	n++;
-	s = malloc(n * sizeof(char));
+	for (i = 0; str[i]; i++)
+		;
+	i++;
+	s = malloc(i * sizeof(char));
 	if (s == NULL)
-		return (NULL);
-	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[i][j]; j++)
-		{
-			s[k] = av[i][j];
-			k++;
-		}
-		s[k] = '\n';
-		k++;
+		return (NULL);
 	}
-	s[k] = '\0';
+	for (j = 0; j < i; j++)
+	{
+		s[j] = str[j];
+	}
 	return (s);
 }
